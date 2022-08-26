@@ -2,15 +2,18 @@
 {% block main %}
 <div class="col-xxl-8 col-lg-6 col-md-12 col-sm-12 todo-container">
     <div class="row">
-      {% for todos in todos %}
+      {% regroup todos by category as todo_list %}
+      {% for todo in todo_list %}
       <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12 mt-2">
         <div class="count shadow">
           <div class="todo-title text-center pt-1">
-            <h4>{{todos.category}}</h4>
+            <h4>{{todo.grouper}}</h4>
           </div>
           <div class="todo-list" style="height: 190px;">
-            <ul style="list-style-type: none; width: 90%; margin: auto 0px;">
-              <li>{{todos.todo }}</li>
+            <ul style="list-style-type: number; width: 90%; margin: auto 0px;">
+              {% for todo_task in todo.list %}
+              <li>{{todo_task.todo}}</li>
+              {% endfor %}
             </ul>
           </div>
           <div class="todo-more text-center" style="height: 20px;">

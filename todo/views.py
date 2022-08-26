@@ -5,7 +5,8 @@ from .models import Todo, Category
 
 # Create your views here.
 def home(request):
-    todo =  Todo.objects.all()
+    category = Category.objects.all()
+    todo =  Todo.objects.all().filter(category__in=category)
     context = {
         'todos':todo,
     }
