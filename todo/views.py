@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Todo, Category
 from .forms import TodoForm, CategoryForm
+from django.contrib import messages
 
 
 
@@ -14,10 +15,11 @@ def home(request):
     return render(request, 'todo/home.html', context)
 
 def detail(request, id):
-    # todo = Todo.object_or_404(Todo,id=id)
-    todo =  get_object_or_404(Category, id=id)
+    todo =  Todo.objects.all().filter(category=get_object_or_404(Category, id=id))
+    category=get_object_or_404(Category, id=id)
     context = {
-        'todo':todo
+        'todo':todo,
+        'category':category
     }
     return render(request, 'todo/detail.html', context)
     
@@ -35,9 +37,10 @@ def category(request):
             form.save()
             return redirect('form')
         else:
-            form = CategoryForm()
+            messages.error(request, "Category already exists or create task")
+            return redirect('category')
     else:
-        form = CategoryForm
+        form = CategoryForm()
     context = {
         'form':form
     }
@@ -58,34 +61,3 @@ def form(request):
         'form':form
     }
     return render(request, 'todo/form.html', context)
-
-
-
-# def detail(request, id):
-#     # blog = Blog.objects.get(id=id)
-#     blog = get_object_or_404(Blog,id=id)
-#     context = {
-#         'blog':blog
-#     }
-#     return render (request, 'pages/detail.html', context)    
-
-
-# def update(request, id):
-#     blog = get_object_or_404(Blog,id=id)
-#     form = BlogForm(request.POST, instance=blog)
-#     if form.is_valid():
-#         form.save()
-#         return redirect('blog')
-#     else:
-#         form = BlogForm(instance=blog)
-#     context = {
-#         'form':form
-#     }
-
-#     return render(request, 'pages/update.html', context)
-
-
-# def delete(request, id):
-#     blog = get_object_or_404(Blog,id=id)
-#     blog.delete()
-#     return redirect('home')

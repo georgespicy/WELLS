@@ -11,7 +11,7 @@ class Category(models.Model):
 
 class Todo(models.Model):
     todo = models.TextField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='todos')
     is_completed = models.BooleanField(default=False, blank=True)
     date_posted = models.DateTimeField(auto_now_add=True)
 
