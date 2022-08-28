@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <a
+        href="{% url 'home' %}"
+        class="text-end"
+        style="color: #fff; font-size: 25px; text-decoration: none"
+        ><i class="fas fa-arrow-left mt-5"></i
+      ></a>
+      <h1 class="text-center" style="color: #fff">Todo Task</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ul class="text-start" style="list-style: none">
+        <li
+          style="
+            font-size: 30px;
+            color: #fff;
+            text-transform: capitalize;
+            padding-bottom: 3px;
+            border-bottom: 2px #fff solid;
+            width: 180px;
+          "
+        >{{todo.category}}</li>
+      </ul>
+      <ul class="text-center" style="list-style: none">
+        <li style="font-size: 20px; color: #fff; text-transform: capitalize">
+          {{todo.todo}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -2,7 +2,7 @@
 {% block main %}
 <div class="col-xxl-8 col-lg-6 col-md-12 col-sm-12 todo-container">
     <div class="row">
-      {% regroup todos by category as todo_list %}
+      {% regroup todo by category as todo_list %}
       {% for todo in todo_list %}
       <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12 mt-2">
         <div class="count shadow">
@@ -11,17 +11,17 @@
           </div>
           <div class="todo-list" style="height: 190px;">
             <ul style="list-style-type: number; width: 90%; margin: auto 0px;">
-              {% for todo_task in todo.list %}
-              <li>{{todo_task.todo}}</li>
+              {% for todo in todo.list %}
+              <li>{{todo.todo}}</li>
               {% endfor %}
             </ul>
           </div>
           <div class="todo-more text-center" style="height: 20px;">
-            <a href="#" style="color: #606060;"><i class="fas fa-arrow-down mt-1"></i></a>
+            <a href="" style="color: #606060;"><i class="fas fa-arrow-down mt-1"></i></a>
           </div>
           <div class="todo-nav" style="height: 40px;">
-            <a href="#" class="ms-2" style="color: #606060; font-size: 18px;"><i class="fas fa-trash-alt"></i></i></a>
-            <span><a href="#" class="ms-3" style="color: #606060; font-size: 18px;"><i class="fas fa-edit"></i></a></span>
+            <a href="{% url 'delete' todo.grouper.id %}" class="ms-2" style="color: #606060; font-size: 18px;"><i class="fas fa-trash-alt"></i></i></a>
+            <span><a href="" class="ms-3" style="color: #606060; font-size: 18px;"><i class="fas fa-edit"></i></a></span>
           </div>
         </div>
       </div>

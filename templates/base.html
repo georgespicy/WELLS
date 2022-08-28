@@ -14,111 +14,164 @@
       href="https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/158400e587.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/158400e587.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body{
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #7b2ae8;
-        }
-
-        .progress-bar{
-            display: flex;
-            width: 70%;
-            height: 400px;
-            margin-right: auto;
-            margin-left: auto;
-            margin-top: 100px;
-            padding: 50px, 0;
-            border-radius: 8px;
-            background: #fff;
-            row-gap: 30px;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .circular-progress{
-            position: relative;
-            height: 250px;
-            width: 250px;
-            border-radius: 50%;
-            background: conic-gradient(#7b2ae8 3.6deg, #ededed 0deg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .circular-progress::before{
-            content: "";
-            position: absolute;
-            height: 210px;
-            width: 210px;
-            border-radius: 50%;
-            background-color: #fff;
-        }
-
-        .progress-value{
-            position: relative;
-            font-size: 40px;
-            font-weight: 600;
-            color: #7b2ae8;
-        }
-
-        .text{
-            font-size: 30px;
-            font-weight: 600px;
-            color: #606060;
-        }
-
-        /* todo */
-
-        .logo{
-            font-size: 50px;
-            font-family: Rubik Maze;
-            color: #fff;
-        }
-
-        .todo-container{
-            margin-top: 100px;
-        }
-
-        .count{
-            height: 300px;
-            background-color: #fff;
-            border-radius: 10px;
-        }
-        .add-task{
-          font-size: 25px;
-          text-decoration: none;
-          color: #7b2ae8;
-          background-color: #fff;
-          border: 2px solid #fff;
-          padding: 5px 10px 5px 10px;
-          border-radius: 5px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
       }
+
+      body {
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #7b2ae8;
+      }
+
+      .progress-bar {
+        display: flex;
+        width: 70%;
+        height: 400px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 100px;
+        padding: 50px, 0;
+        border-radius: 8px;
+        background: #fff;
+        row-gap: 30px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .circular-progress {
+        position: relative;
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background: conic-gradient(#7b2ae8 3.6deg, #ededed 0deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .circular-progress::before {
+        content: "";
+        position: absolute;
+        height: 210px;
+        width: 210px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+      .progress-value {
+        position: relative;
+        font-size: 40px;
+        font-weight: 600;
+        color: #7b2ae8;
+      }
+
+      .text {
+        font-size: 30px;
+        font-weight: 600px;
+        color: #606060;
+      }
+
+      /* todo */
+
+      .logo {
+        cursor: pointer;
+        font-size: 50px;
+        font-family: Rubik Maze;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .todo-container {
+        margin-top: 100px;
+      }
+
+      .count {
+        height: 300px;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+      .add-task {
+        font-size: 15px;
+        text-decoration: none;
+        color: #7b2ae8;
+        background-color: #fff;
+        border: 2px solid #fff;
+        padding: 5px 10px 5px 10px;
+        border-radius: 5px;
+      }
+      /* form */
+
+      .category-input,
+      .todo-input {
+        height: auto;
+        background: #fff;
+        border-radius: 30px;
+        margin-top: 5px;
+        padding: 10px 20px 10px 20px;
+        text-transform: capitalize;
+        font-size: 25px;
+        text-align: center;
+        width: 100%;
+        border: none;
+        outline: none;
+        color: #606060;
+        letter-spacing: 1px;
+      }
+
+      .category-input ::after,
+      .todo-input ::after {
+        outline: none;
+        border: none;
+      }
+      
+      .todo-category{
+        margin-top: 20px;
+        text-transform: capitalize;
+        background-color:#fff;
+        color: #7b2a7b;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+      }
+
+      .submit-button {
+        font-size: 20px;
+        text-align: center;
+        width: 25%;
+        border: none;
+        outline: none;
+        color-background: #7b2ae8;
+        letter-spacing: 1px;
+      }
+
+      /* details page */
     </style>
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <p class="logo">WELLS</p>
+          <a class="logo" href="{% url 'home' %}">WELLS</a>
         </div>
       </div>
       <div class="row">
-        {% block main %}{% endblock  %}
+        <div class="col-xxl-8 col-lg-6 col-md-12 col-sm-12">
+          {% block main %}{% endblock %}
+        </div>
         <!-- progress bar container -->
         <div class="col-xxl-4 col-lg-6 col-md-12 col-sm-12">
           <div class="progress-bar">
@@ -129,7 +182,8 @@
           </div>
           <div class="row">
             <div class="col-12 text-center mt-3">
-              <a href="#" class="add-task">Add Task</a>
+              <a href="{% url 'category' %}" class="add-task">Add Category</a>
+              <a href="{% url 'form' %}" class="add-task">Add Task</a>
             </div>
           </div>
         </div>
@@ -137,24 +191,25 @@
     </div>
     <script>
       let circularProgress = document.querySelector(".circular-progress"),
-      progressValue = document.querySelector(".progress-value");
-      const todoCount = document.getElementsByClassName('count').length;
-      console.log(todoCount)
-      
-      
-      let progressStartValue = 100;    
+        progressValue = document.querySelector(".progress-value");
+      const todoCount = document.getElementsByClassName("count").length;
+      console.log(todoCount);
+
+      let progressStartValue = 100;
       let progressEndValue = 0;
       let speed = 100;
-      
+
       const progress = setInterval(() => {
-      progressStartValue = (todoCount / 25) * 100 ;
-      
-      progressValue.textContent = `${100 - progressStartValue}%`
-      circularProgress.style.background = `conic-gradient(#7d2ae8 ${(100 - progressStartValue) * 3.6}deg, #ededed 0deg)`
-      
-      if(progressStartValue == progressEndValue){
+        progressStartValue = (todoCount / 25) * 100;
+
+        progressValue.textContent = `${100 - progressStartValue}%`;
+        circularProgress.style.background = `conic-gradient(#7d2ae8 ${
+          (100 - progressStartValue) * 3.6
+        }deg, #ededed 0deg)`;
+
+        if (progressStartValue == progressEndValue) {
           clearInterval(progress);
-      }    
+        }
       }, speed);
     </script>
     <script
